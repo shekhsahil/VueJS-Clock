@@ -1,0 +1,50 @@
+
+[v-cloak]{
+    display:none;
+}
+body{
+
+    background-image: url(https://previews.123rf.com/images/marinamandarina/marinamandarina1607/marinamandarina160700036/61021929-seamless-pattern-with-doodle-watches-and-clocks-can-be-used-for-textile-website-background-book.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.clock{
+    border: 5px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+    
+    width: 200px;
+  height: 254px;
+  border-radius: 30px;
+  background: #ffffff;
+  -webkit-box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+          box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
+.ddmmyy{
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+      
+      width: 400px;
+    height: 500px;
+    border-radius: 30px;
+    background: #ffffff;
+    -webkit-box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+            box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;  
+}
+.clock,.ddmmyy{
+    color: black;
+    font-size: 70px;
+    text-align: center;
+}

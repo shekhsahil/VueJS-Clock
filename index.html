@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Js Clock</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="Time()">
+    <div id="app" v-cloak>
+        
+        <div class="clock">
+            <div class="hour">
+              {{Hour +" H"}}
+            </div>
+            <div class="min">
+                {{Min+" M"}}
+            </div>
+            <div class="sec">
+                {{Sec+" S"}}
+            </div>
+
+        </div>
+        <div class="ddmmyy">
+            <div class="date">
+              {{"Date :"+date}}
+            </div>
+            <div class="day">
+                {{"Day :"+day}}
+            </div>
+            <div class="month">
+                {{"Month :"+Month}}
+            </div>
+            <div class="year">
+                {{"Year :"+Year}}
+            </div>
+        </div>
+        
+    </div>
+    
+    
+	<!-- <script src="clock.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let app=Vue.createApp({
+            data:function(){
+                return {
+                    Hour:0,
+                    Min:0,
+                    Sec:0
+                }
+            },      
+  methods: {
+    Time:function() {
+        let time=new Date();
+                   this.Hour=time.getHours();
+                   this.Min=time.getMinutes();
+                   this.Sec=time.getSeconds();
+                   this.date=time.getDate();
+                   this.Month=time.getMonth()+1;
+                   this.Year=time.getFullYear();
+                   this.day=time.getDay();
+
+    }
+  },
+  mounted() {
+    this.intervalId = setInterval(this.Time, 1000); 
+  },
+  beforeDestroy() {
+    clearInterval(this.Time);
+  }
+
+        })
+      
+        app.mount('#app')
+    </script>
+</body>
+</html>
